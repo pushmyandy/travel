@@ -1,5 +1,5 @@
 <template>
-      <div class="navHeader row">
+      <div class="navHeader">
         <div class="col-xs-1 backIcon">
           <span class="iconfont">&#xe624;</span>
         </div>
@@ -25,6 +25,7 @@ export default {
     background cornflowerblue
     text-align center
     .backIcon
+      margin-left .3rem
       text-align center
       height 4rem
       line-height 4rem
@@ -38,7 +39,9 @@ export default {
         border-radius 0.5rem
         padding-left 1rem
     .navCity
+      float right
       margin-left .5rem
+      margin-right .5rem
       padding 0
       color white
       height 4rem

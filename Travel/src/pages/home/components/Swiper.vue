@@ -1,6 +1,5 @@
 <template>
-  <div class="row">
-    <div class="col-sm-12 ">
+  <div >
       <swiper class="swiper" :options="swiperOption" >
         <swiper-slide v-for="item in swiperList">
           <a>
@@ -9,7 +8,6 @@
         </swiper-slide>
         <div class="swiper-pagination"  slot="pagination"></div>
       </swiper>
-    </div>
   </div>
 </template>
 
