@@ -8,14 +8,17 @@
         </div>
         <div class="col-xs-2 navCity">
           <span class="iconfont">&#xe62d;</span>
-          <span>游戏</span>
+          <span>{{this.game}}</span>
         </div>
       </div>
 </template>
 
 <script>
 export default {
-  name: "HomeHeader"
+  name: "HomeHeader",
+  props: {
+    game: String
+  }
 }
 </script>
 

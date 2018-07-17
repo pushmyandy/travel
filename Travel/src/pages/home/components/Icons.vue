@@ -1,6 +1,6 @@
 <template>
     <div class="icons">
-      <swiper class="swiper">
+      <swiper class="swiper" :options = "swiperOption">
         <swiper-slide v-for="page of pages">
           <div class="icon" v-for="item in page" :key="item.id">
             <img :src="item.src">
@@ -14,61 +14,20 @@
 <script>
 export default {
   name: "HomeIcons",
+  props: {
+    list: Array
+  },
   data () {
     return {
-        iconList: [
-          {
-            id:'001',
-            src:'https://img.alicdn.com/i2/2/TB1lL6xPVXXXXcTXpXXSutbFXXX.jpg_90x90q90.jpg',
-            text: 'SA'
-          },
-          {
-            id: '002',
-            src:'https://img.alicdn.com/i2/2/T1tzyoXnd3XXb1upjX.jpg_90x90q90.jpg',
-            text: 'Ite'
-          },
-          {
-            id: '003',
-            src:'https://img.alicdn.com/i2/2/T1tzyoXnd3XXb1upjX.jpg_90x90q90.jpg',
-            text: 'Ite'
-          },
-          {
-            id: '004',
-            src:'https://img.alicdn.com/i2/2/T1tzyoXnd3XXb1upjX.jpg_90x90q90.jpg',
-            text: 'Ite'
-          },
-          {
-            id: '005',
-            src:'https://img.alicdn.com/i2/2/T1tzyoXnd3XXb1upjX.jpg_90x90q90.jpg',
-            text: 'Ite'
-          },
-          {
-            id: '006',
-            src:'https://img.alicdn.com/i2/2/T1tzyoXnd3XXb1upjX.jpg_90x90q90.jpg',
-            text: 'Ite'
-          },
-          {
-            id: '007',
-            src:'https://img.alicdn.com/i2/2/T1tzyoXnd3XXb1upjX.jpg_90x90q90.jpg',
-            text: 'Ite'
-          },
-          {
-            id: '008',
-            src:'https://img.alicdn.com/i2/2/T1tzyoXnd3XXb1upjX.jpg_90x90q90.jpg',
-            text: 'Ite'
-          },
-          {
-            id: '009',
-            src:'https://img.alicdn.com/i2/2/T1tzyoXnd3XXb1upjX.jpg_90x90q90.jpg',
-            text: 'Ite'
-          }
-        ]
+      swiperOption: {
+        autoplay: false
+      }
     }
   },
   computed: {
     pages () {
       const  pages  = [];
-      this.iconList.forEach((item, index) => {
+      this.list.forEach((item, index) => {
         const page = Math.floor(index/8);
         if(!pages[page]) {
           pages[page] = [];
