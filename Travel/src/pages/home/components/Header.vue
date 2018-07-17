@@ -6,10 +6,12 @@
         <div class="col-xs-8 navInput">
           <input type="text" placeholder="search"/>
         </div>
-        <div class="col-xs-2 navCity">
-          <span class="iconfont">&#xe62d;</span>
-          <span>{{this.game}}</span>
-        </div>
+        <router-link to="/Game">
+          <div class="col-xs-2 navCity">
+            <span class="iconfont">&#xe62d;</span>
+            <span>{{this.game}}</span>
+          </div>
+        </router-link>
       </div>
 </template>
 

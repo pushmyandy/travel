@@ -1,10 +1,16 @@
 <template>
-
+  <div>
+    <game-header></game-header>
+  </div>
 </template>
 
 <script>
+import GameHeader from './components/Header'
 export default {
-  name: "List"
+  name: "Game",
+  components: {
+    GameHeader
+  }
 }
 </script>
 
