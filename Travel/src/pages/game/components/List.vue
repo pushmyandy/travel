@@ -30,8 +30,11 @@
 import Bscroll from 'better-scroll'
 export default {
   name: "List",
+  props: {
+    list: Array //传入未使用
+  },
   mounted () {
-    this.scroll = new Bscroll(this.$refs.wrapper)
+    this.scroll = new Bscroll(this.$refs.wrapper)   //  上下滑动效果
   }
 }
 </script>
