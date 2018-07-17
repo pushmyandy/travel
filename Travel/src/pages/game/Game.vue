@@ -1,7 +1,7 @@
 <template>
   <div>
     <game-header></game-header>
-    <game-search></game-search>
+    <game-search :cities="cities"></game-search>
     <game-list :list="list"
                :guideVal = "guideVal"
     ></game-list><!--guide的值传给list-->
