@@ -2,8 +2,12 @@
   <div>
     <game-header></game-header>
     <game-search></game-search>
-    <game-list :list="list"></game-list>
-    <game-guide></game-guide>
+    <game-list :list="list"
+               :guideVal = "guideVal"
+    ></game-list><!--guide的值传给list-->
+    <game-guide :guide="guide"
+    @change = "handleGuide"
+    ></game-guide>
   </div>
 </template>
 
@@ -23,7 +27,9 @@ export default {
   },
   data () {
     return {
-      list: []
+      list: [],
+      guide: [],
+      guideVal: ""
     }
   },
   methods: {
@@ -33,8 +39,13 @@ export default {
     handleGame (res) {
       res = res.data;
       if(res.ret){
-        this.list = res.list
+        this.list = res.list;
+        this.guide = res.guide;
       }
+    },
+    handleGuide (res) {
+      //获取传递的值
+      this.guideVal = res;
     }
   },
   mounted () {

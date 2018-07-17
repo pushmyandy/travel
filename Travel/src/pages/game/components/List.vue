@@ -1,7 +1,9 @@
 <template>
     <div class="list" ref="wrapper">
       <div>
-        <div class="area">
+        <div class="area"
+        ref="key" >
+        <!--key是ajax获取到的值-->
           <div class="title border-topbottom">Current</div>
           <div class="btnClass">
             <button class=" btn btn-warning btn-block" style="margin: 0">EA</button>
@@ -31,11 +33,21 @@ import Bscroll from 'better-scroll'
 export default {
   name: "List",
   props: {
-    list: Array //传入未使用
+    list: Array , //传入未使用
+    guideVal: String
   },
   mounted () {
     this.scroll = new Bscroll(this.$refs.wrapper)   //  上下滑动效果
+  },
+  watch: {
+    guideVal () {
+      if(this.guideVal) {
+        const ele = this.$refs[this.guideVal][0];//key
+        this.scroll.scrollToElement(ele) //BetterScroll接口
+      }
+    }
   }
+
 }
 </script>
 
